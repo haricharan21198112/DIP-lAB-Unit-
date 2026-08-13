@@ -1,0 +1,45 @@
+clc; 
+clear; 
+close all; 
+% Read the image 
+ 
+img = imread('C:\desktop\dip\sample.png'); 
+ 
+% 1. Display original image 
+figure; 
+imshow(img); 
+title('Original Image'); 
+% 2. Determine image type 
+if ndims(img) == 2 
+Objective 
+ 
+To read and analyze a digital image using MATLAB by displaying the original image, identifying 
+whether it is grayscale or RGB, determining its dimensions and total number of pixels, finding the 
+minimum and maximum pixel intensity values, and displaying a selected portion of the image 
+matrix. 
+disp('Image Type: Grayscale Image'); 
+elseif ndims(img) == 3 && size(img,3) == 3 
+disp('Image Type: RGB Image'); 
+else disp('Image Type: Other'); 
+end 
+% 3. Display image dimensions 
+ 
+[rows, columns, channels] = size(img); 
+ 
+fprintf('Image Dimensions: %d x %d\n', rows, columns); 
+if ndims(img) == 3 
+fprintf('Number of Channels: %d\n', channels); 
+end 
+% 4. Calculate total number of pixels 
+total_pixels = rows * columns; 
+fprintf('Total Number of Pixels: %d\n', total_pixels); 
+% 5. Find minimum and maximum intensity 
+fprintf('Minimum Pixel Intensity: %d\n', min(img(:))); 
+fprintf('Maximum Pixel Intensity: %d\n', max(img(:))); 
+% 6. Display selected portion of image matrix 
+disp('Selected 5 x 5 Image Matrix:'); 
+if ndims(img) == 2 
+disp(img(1:5,1:5)); 
+else 
+disp(img(1:5,1:5,:)); 
+end
