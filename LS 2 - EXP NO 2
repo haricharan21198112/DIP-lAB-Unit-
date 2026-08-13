@@ -1,0 +1,17 @@
+clc; 
+clear; 
+close all; 
+img = imread('C:\desktop\dip\sample.png'); 
+if size(img,3)==3 
+img = rgb2gray(img); 
+end 
+img2 = img(1:2:end,1:2:end); 
+ 
+img4 = img(1:4:end,1:4:end); 
+ 
+img8 = img(1:8:end,1:8:end); 
+figure; 
+subplot(2,2,1); imshow(img); title('Original Image'); 
+subplot(2,2,2); imshow(img2); title('Every 2nd Pixel'); 
+subplot(2,2,3); imshow(img4); title('Every 4th Pixel'); 
+subplot(2,2,4); imshow(img8); title('Every 8th Pixel');
