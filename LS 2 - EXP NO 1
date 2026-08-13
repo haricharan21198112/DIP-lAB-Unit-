@@ -1,0 +1,30 @@
+clc; 
+clear; 
+close all; 
+img = imread('C:\desktop\dip\sample.png'); 
+R = img(:,:,1); 
+G = img(:,:,2); 
+B = img(:,:,3); 
+figure; 
+subplot(2,2,1); imshow(img); title('Original RGB'); 
+subplot(2,2,2); imshow(R); title('Red'); 
+subplot(2,2,3); imshow(G); title('Green'); 
+ 
+subplot(2,2,4); imshow(B); title('Blue'); 
+x = 100; 
+y = 100; 
+ 
+r = img(y,x,1); 
+ 
+g = img(y,x,2); 
+ 
+b = img(y,x,3); 
+ 
+fprintf('Pixel (%d,%d): R=%d, G=%d, B=%d\n',x,y,r,g,b); 
+if r>=g && r>=b 
+disp('Dominant Color: Red'); 
+elseif g>=r && g>=b 
+disp('Dominant Color: Green'); 
+else 
+disp('Dominant Color: Blue'); 
+end
